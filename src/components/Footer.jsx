@@ -4,6 +4,15 @@ import { AiFillYoutube } from 'react-icons/ai'
 import { FiInstagram } from 'react-icons/fi'
 import { FaFacebookF, FaWhatsappSquare } from 'react-icons/fa'
 import { Links } from "../styles/HeaderStyles";
+import styled from "styled-components"
+
+const Wrapper = styled.div`
+ @media (max-width: 900px) {
+    &:nth-child(2) ${Flex} {
+   flex-direction: column;
+ }
+  }
+`
 
 export default function Footer() {
     return <>
@@ -24,64 +33,66 @@ export default function Footer() {
                     <ZoomOutButton>GET STARTED</ZoomOutButton>
                 </Flex>
             </HoverCard>
-            <Flex spaceBetween >
-                <Flex color={'white'} gap={'3rem'} width={'50%'} >
-                    <Flex column gap={'1.5rem'} width={'55%'}>
-                        <Span family={'Lobster, cursive'}>Itax-Easy</Span>
-                        <Paragraph>
-                            "Efficiently file your GST and ITR - stay compliant, stay stress-free."
-                        </Paragraph>
-                    </Flex>
-                    <Flex column gap={'1.5rem'}>
-                        <Span family={'Lobster, cursive'}>Call Us</Span>
-                        <Paragraph
-                            size={'1rem'}
-                        >
-                            +91 9650771730
-                        </Paragraph>
-                    </Flex>
-                </Flex>
-                <Flex color={'white'} gap={'3rem'} width={'45%'} >
-                    <Flex column gap={'1.5rem'}>
-                        <Span family={'Lobster, cursive'}>Follow Us</Span>
-                        <Flex gap={'1rem'} size={'1.4rem'}>
-                            <IconContainer>
-                                <Links to="https://wa.me/+918318520053">
-                                    <FaFacebookF />
-                                </Links>
-                            </IconContainer>
-                            <IconContainer>
-                                <Links to="https://www.instagram.com/_itax_easy/">
-                                    <FiInstagram />
-                                </Links>
-                            </IconContainer>
-                            <IconContainer>
-                                <Links to="https://www.youtube.com/channel/UCPIBwAH6WY0zbprHooMjx8g">
-                                    <AiFillYoutube />
-                                </Links>
-                            </IconContainer>
-                            <IconContainer>
-                                <Links to="https://wa.me/+918318520053">
-                                    <FaWhatsappSquare />
-                                </Links>
-                            </IconContainer>
+            <Wrapper>
+                <Flex spaceBetween >
+                    <Flex color={'white'} gap={'3rem'} width={'50%'} >
+                        <Flex column gap={'1.5rem'} width={'55%'}>
+                            <Span family={'Lobster, cursive'}>Itax-Easy</Span>
+                            <Paragraph>
+                                "Efficiently file your GST and ITR - stay compliant, stay stress-free."
+                            </Paragraph>
+                        </Flex>
+                        <Flex column gap={'1.5rem'}>
+                            <Span family={'Lobster, cursive'}>Call Us</Span>
+                            <Paragraph
+                                size={'1rem'}
+                            >
+                                +91 9650771730
+                            </Paragraph>
                         </Flex>
                     </Flex>
-                    <Flex column gap={'1.5rem'}>
-                        <Span
-                            family={'Lobster, cursive'}
-                        >
-                            Get in Touch to get more updates
-                        </Span>
-                        <form>
-                            <Flex column gap={'1.5rem'}>
-                                <InputField type="email" placeholder="Email" required></InputField>
-                                <ZoomOutButton type='submit' size={'1.3rem'}>SUBSCRIBE</ZoomOutButton>
+                    <Flex color={'white'} gap={'3rem'} width={'45%'} >
+                        <Flex column gap={'1.5rem'}>
+                            <Span family={'Lobster, cursive'}>Follow Us</Span>
+                            <Flex gap={'1rem'} size={'1.4rem'}>
+                                <IconContainer>
+                                    <Links to="https://wa.me/+918318520053">
+                                        <FaFacebookF />
+                                    </Links>
+                                </IconContainer>
+                                <IconContainer>
+                                    <Links to="https://www.instagram.com/_itax_easy/">
+                                        <FiInstagram />
+                                    </Links>
+                                </IconContainer>
+                                <IconContainer>
+                                    <Links to="https://www.youtube.com/channel/UCPIBwAH6WY0zbprHooMjx8g">
+                                        <AiFillYoutube />
+                                    </Links>
+                                </IconContainer>
+                                <IconContainer>
+                                    <Links to="https://wa.me/+918318520053">
+                                        <FaWhatsappSquare />
+                                    </Links>
+                                </IconContainer>
                             </Flex>
-                        </form>
+                        </Flex>
+                        <Flex column gap={'1.5rem'}>
+                            <Span
+                                family={'Lobster, cursive'}
+                            >
+                                Get in Touch to get more updates
+                            </Span>
+                            <form>
+                                <Flex column gap={'1.5rem'}>
+                                    <InputField type="email" placeholder="Email" required></InputField>
+                                    <ZoomOutButton type='submit' size={'1.3rem'}>SUBSCRIBE</ZoomOutButton>
+                                </Flex>
+                            </form>
+                        </Flex>
                     </Flex>
                 </Flex>
-            </Flex>
+            </Wrapper>
         </Container>
         <Container
             size={'1.2rem'}

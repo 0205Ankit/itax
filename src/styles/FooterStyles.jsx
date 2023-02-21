@@ -12,6 +12,7 @@ export const HoverCard = styled.div`
 
 `
 export const IconContainer = styled.div`
+width: max-content;
     padding: 8px 10px;
     border-radius: 50%;
     border: 2px solid white;

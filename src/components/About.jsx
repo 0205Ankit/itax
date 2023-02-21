@@ -1,19 +1,16 @@
 import { Container, Flex, Heading, Paragraph, Span, ZoomOutButton } from "../styles/globalStyles";
-import styled from "styled-components"
+import useWindowDimensions from "../hooks/useWindowDimensionHook";
 
-const Wrapper = styled.div`
- @media (max-width: 900px) {
-    &:nth-child(2) ${Flex} {
-   flex-direction: column;
- }
-  }
-`
+
 
 export default function About() {
+
+    const {width}=useWindowDimensions()
+
     return <>
-        <Wrapper>
+        <>
             <Container width={'95%'} margin={'auto'}>
-                <Flex spaceBetween>
+                <Flex spaceBetween column={width <= 900 ? true : false}>
                     <Flex gap={'1rem'} column padding={'3rem 0 0 0 '}>
                         <Paragraph
                             weight={600}
@@ -46,6 +43,6 @@ export default function About() {
                     <img src='../../images/hero22.jpeg' alt='heroImage' width={"600px"} />
                 </Flex>
             </Container>
-        </Wrapper>
+        </>
     </>
 }

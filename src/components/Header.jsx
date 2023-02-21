@@ -32,7 +32,7 @@ const Header = () => {
         <Flex spaceBetween padding={"1rem 0 0 0"} alignCenter >
 
             <a href="/"><img src="../../images/logo.png" alt="logoImage" width={'120px'} height={'120px'} /></a>
-            {width > 900 && <Flex >
+            {width > 900 && <Flex>
                 <List>
                     <Links to='/'>
                         <ListItems>

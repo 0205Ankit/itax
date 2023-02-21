@@ -1,15 +1,11 @@
 import { Container, Flex, Heading, Paragraph, ZoomOutButton } from "../styles/globalStyles";
-import styled from "styled-components"
+import useWindowDimensions from "../hooks/useWindowDimensionHook";
 
-const Wrap = styled.div`
- @media (max-width: 900px) {
-    &:nth-child(2) ${Flex} {
-   flex-direction: column;
- }
-  }
-`
 
 export default function Info() {
+
+    const {width}=useWindowDimensions()
+
     return <>
     <Heading
             size={'3rem'}
@@ -20,9 +16,8 @@ export default function Info() {
     >
       About Us  
     </Heading>
-        <Wrap>
             <Container width={'95%'} margin={'auto'}>
-                <Flex spaceBetween gap={'2rem'} alignCenter>
+            <Flex spaceBetween gap={'2rem'} alignCenter column={width <= 900 ? true : false}>
                     <Flex gap={'1rem'} column padding={'3rem 0 0 0 '}>
                         <Paragraph
                             weight={600}
@@ -50,6 +45,5 @@ export default function Info() {
                     <img src='../../images/hero23.jpeg' alt='heroImage' width={"600px"} height={'450px'} />
                 </Flex>
             </Container>
-        </Wrap>
     </>
 }
